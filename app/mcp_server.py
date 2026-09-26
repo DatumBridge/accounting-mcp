@@ -10,6 +10,7 @@ from starlette.responses import JSONResponse
 from starlette.routing import Mount, Route
 
 from app.tools import register_all
+from app.capability_bind import bind_declared_capabilities
 
 logger = logging.getLogger(__name__)
 
@@ -30,6 +31,9 @@ mcp = FastMCP(
 )
 
 register_all(mcp)
+
+
+bind_declared_capabilities(mcp)
 
 _base_app = mcp.http_app()
 
