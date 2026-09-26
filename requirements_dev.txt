@@ -1,0 +1,2 @@
+-r requirements_mcp.txt
+pytest>=7.4.0
